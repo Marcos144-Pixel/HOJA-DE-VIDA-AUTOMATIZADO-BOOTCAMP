@@ -12,9 +12,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-desarrollo-local-123456789'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True  # Para desarrollo/pruebas
+# Cambia a False cuando esté todo funcionando bien
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['marcos-luis-campozano-mendoza.onrender.com', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = [
+    'https://marcos-luis-campozano-mendoza.onrender.com',
+    'http://marcos-luis-campozano-mendoza.onrender.com',
+]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
